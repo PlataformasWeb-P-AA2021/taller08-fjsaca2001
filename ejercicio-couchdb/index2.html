@@ -28,13 +28,15 @@
       var cadena2 = '';
       for (var i = 0; i < data.rows.length; i++) {
         if (data.rows[i].doc.Country == "Argentina") {
-          cadena += '<li><a href="#tabs-' + i + '">' + data.rows[i].doc.FirstName + data.rows[i].doc.ShirtName + '</a></li>';
-          cadena2 += '<div id="tabs-' + i + '"><p>' + data.rows[i].doc.FirstName.split(" ")[0] + " " + data.rows[i].doc.ShirtName + " " + data.rows[i].doc.Height + "</p></div>";
+          cadena += '<li><a href="#tabs-' + i + '">' + data.rows[i].doc.FirstName + data.rows[i].doc.ShirtName
+            + '</a></li>';
+          cadena2 += '<div id="tabs-' + i + '"><p>' + data.rows[i].doc.FirstName + " " + data.rows[i].doc.ShirtName
+            + "<br>" + data.rows[i].doc.FirstName.split(" ")[0] + " " + data.rows[i].doc.ShirtName + " "
+            + data.rows[i].doc.POS + " " + data.rows[i].doc.Height + "</p></div>";
         }
       }
       $("#tabs").append('<ul>' + cadena + '</ul>' + cadena2);
-      $("#tabs").tabs({
-      });
+      $("#tabs").tabs();
     });
   });
 </script>
